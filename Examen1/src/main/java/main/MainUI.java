@@ -169,9 +169,14 @@ public class MainUI {
                     else
                         System.out.println(ConstantesMain.ERRORBINARIO);
                 }
-                case 10 ->
+                case 10 -> {
                     //10. Cargar el fichero de texto
-                        System.out.println("Opcion 10");
+                    System.out.println("Opcion 10");
+                    if (service.cargarTxt(ConstantesMain.NOMBREFICHERO))
+                        System.out.println("Fichero cargado correctamente");
+                    else
+                        System.out.println(ConstantesMain.ERRORFICHERO);
+                }
                 case 11 ->
                     //11. Mapa que para cada provincia lista de pistas que existen
                         System.out.println("Opcion 11");

@@ -20,4 +20,6 @@ public class ConstantesMain {
             "12. Salir\n";
 
     public static final String ERRORMENU = "Error al introducir la opción, debe ser un número. Vuelve a intentarlo";
+    public static final String NOMBREFICHERO = "src//main//resources//FicheroTXT.txt";
+    public static final String ERRORFICHERO = "Error al cargar el fichero";
 }

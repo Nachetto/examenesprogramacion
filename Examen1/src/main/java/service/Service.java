@@ -46,6 +46,10 @@ public class Service{
         return dao.escribirFichero();
     }
 
+    public boolean cargarTxt(String nombreFichero) {
+        return dao.cargarTxt(nombreFichero);
+    }
+
     public boolean escribirBinario() {
         return dao.escribirBinario();
     }

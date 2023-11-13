@@ -5,9 +5,11 @@ import common.ExcepcionDificultad;
 import domain.Pista;
 import domain.SkiAlpino;
 import domain.SkiFondo;
+import main.ConstantesMain;
 
 import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class PistasDaoImpl implements PistasDao{
     private List<Pista> pistas;
@@ -98,9 +100,9 @@ public class PistasDaoImpl implements PistasDao{
 
     public boolean escribirFichero() {
         try {
-            FileWriter fichero = new FileWriter("src//main//resources//FicheroTXT.txt");
+            FileWriter fichero = new FileWriter(ConstantesMain.NOMBREFICHERO);
             for (Pista pista : pistas) {
-                fichero.write(pista.toString());
+                fichero.write(pista.toStringTextFile());
             }
             fichero.close();
             return true;
@@ -140,6 +142,41 @@ public class PistasDaoImpl implements PistasDao{
             System.out.println(e.getMessage());
             return false;
         }
+    }
+
+
+    public boolean cargarTxt(String nombreArchivo) {
+        // Abre el archivo de texto para lectura
+        try (BufferedReader reader = new BufferedReader(new FileReader(nombreArchivo))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                // Procesa la línea para crear un objeto Pista
+                String[] datos = linea.split(";");
+                if (datos[0].equals("SkiAlpino")) {
+                    // Crea un objeto SkiAlpino y lo añade a la lista
+                    SkiAlpino pistaAlpino = new SkiAlpino(datos[3], datos[2], Integer.parseInt(datos[1]), Integer.parseInt(datos[5]), datos[4]);
+                    pistas.add(pistaAlpino);
+                } else if (datos[0].equals("SkiFondo")) {
+                    // Para SkiFondo necesitas convertir el String de pueblos a una lista
+                    List<String> pueblos = Arrays.asList(datos[4].split(","));
+                    SkiFondo pistaFondo = new SkiFondo(datos[3], datos[2], Integer.parseInt(datos[1]), Integer.parseInt(datos[5]), pueblos);
+                    pistas.add(pistaFondo);
+                }
+            }
+            return true;
+        } catch (IOException | NumberFormatException e) {
+            System.out.println("Error al cargar el archivo: " + e.getMessage());
+            return false;
+        } catch (ExcepcionDificultad e) {
+            System.out.println("Dificultad no válida: " + e.getMessage());
+            return false;
+        }
+
+//        public Map<String, List<Pista>> getPistasPorProvincia() {
+//            return pistas.stream()
+//                    .collect(Collectors.groupingBy(Pista::getProvincia));
+//        }
+
 
     }
 }
