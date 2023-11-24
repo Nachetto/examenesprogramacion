@@ -42,12 +42,16 @@ public class PistasDaoImpl implements PistasDao {
         return pistas.add(p);
     }
 
+
+    @Override
     public int kmExtensionPorProvincia(String provincia) {
         return pistas.stream()
                 .filter(pista -> pista.getProvincia().equalsIgnoreCase(provincia))
                 .mapToInt(Pista::getKm).sum();
     }
 
+
+    @Override
     public boolean nuevoPuebloParaPista(String nombreDeLaPista, String nuevoPueblo) {
         for (Pista pista : pistas) {
             if (pista.getNombre().equalsIgnoreCase(nombreDeLaPista)) {
@@ -62,6 +66,8 @@ public class PistasDaoImpl implements PistasDao {
         return false;
     }
 
+
+    @Override
     public List<Pista> obtenerPistasOrdenadasPorProvinciaYKm() {
         List<Pista> copiaPistas = new ArrayList<>(pistas);
         Collections.sort(copiaPistas, new Comparator<Pista>() {
@@ -84,6 +90,7 @@ public class PistasDaoImpl implements PistasDao {
         return pistas.remove(p);
     }
 
+    @Override
     public boolean eliminarPistaPorId(int idPista) {
         for (Pista pista : pistas) {
             if (pista.getId() == idPista) {
@@ -93,6 +100,8 @@ public class PistasDaoImpl implements PistasDao {
         return false;
     }
 
+
+    @Override
     public boolean escribirFichero() {
         try (FileWriter fichero = new FileWriter("src//main//resources//FicheroTXT.txt")) {
             for (Pista pista : pistas) {
@@ -105,6 +114,8 @@ public class PistasDaoImpl implements PistasDao {
         }
     }
 
+
+    @Override
     public boolean escribirBinario() {
         try (FileOutputStream archivoBinario = new
                 FileOutputStream("src//main//resources//FicheroBIN");
@@ -118,6 +129,8 @@ public class PistasDaoImpl implements PistasDao {
         }
     }
 
+
+    @Override
     public boolean cargarBinario() {
         try (FileInputStream archivoEntrada = new
                 FileInputStream("src//main//resources//FicheroBIN");
@@ -131,6 +144,8 @@ public class PistasDaoImpl implements PistasDao {
         }
     }
 
+
+    @Override
     public void mapa() {
         Map<String, List<Pista>> mapa = new HashMap<>();
         for (Pista pista : pistas) {
@@ -147,6 +162,8 @@ public class PistasDaoImpl implements PistasDao {
         }
     }
 
+
+    @Override
     public boolean cargarFicheroTexto() {
         Boolean resultado=true;
         try (FileReader fichero = new FileReader("src//main//resources//FicheroTXT.txt");

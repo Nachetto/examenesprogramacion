@@ -5,7 +5,16 @@ import domain.Pista;
 import java.util.List;
 
 public interface PistasDao{
-    public List<Pista> getPistas();
-    public boolean addPista(Pista p);
-    public boolean removePista(Pista p);
+    List<Pista> getPistas();
+    boolean addPista(Pista p);
+    boolean removePista(Pista p);
+    int kmExtensionPorProvincia(String provincia);
+    boolean nuevoPuebloParaPista(String nombreDeLaPista, String nuevoPueblo);
+    List<Pista> obtenerPistasOrdenadasPorProvinciaYKm();
+    boolean eliminarPistaPorId(int idPista);
+    boolean escribirFichero();
+    boolean escribirBinario();
+    boolean cargarBinario();
+    void mapa();
+    boolean cargarFicheroTexto();
 }
