@@ -23,8 +23,13 @@ public class SkiFondo extends Pista implements Serializable{
                 "Pueblos: " + pueblos + "\n" +
                 "km: " + km+"\n\n";
     }
+
     @Override
-    public String toStringTextFile(){
-        return "SkiFondo;" + id + ";" + provincia + ";" + nombre + ";" + pueblos + ";" + km + "\n";
+    public String toStringTextFile() {
+        String pueblosString="";
+        for (String pueblo:pueblos) {
+            pueblosString+=pueblo+",";
+        }
+        return "SkiFondo;"+nombre+";"+provincia+";"+id+";"+km+";"+pueblosString+"\n";
     }
 }

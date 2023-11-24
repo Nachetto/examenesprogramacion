@@ -1,0 +1,33 @@
+
+f
+java:S1192g"IDefine a constant instead of duplicating this literal " porque:" 3 times.(”…åÁ8ñğ«ˆÀ1
+X
+java:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ñğ«ˆÀ1
+E
+java:S1604C"(Make this anonymous inner class a lambda(ˆÏ±Î8ñğ«ˆÀ1
+K
+java:S2140")Use "java.util.Random.nextInt()" instead.(®Ö¼ÿÿÿÿÿ8‘ñ«ˆÀ1
+F
+java:S2140")Use "java.util.Random.nextInt()" instead.(««Š³8’ñ«ˆÀ1
+K
+java:S2140")Use "java.util.Random.nextInt()" instead.(©ñá†ûÿÿÿÿ8’ñ«ˆÀ1
+K
+java:S2140")Use "java.util.Random.nextInt()" instead.(‚Æ‡®ûÿÿÿÿ8’ñ«ˆÀ1
+F
+java:S2140")Use "java.util.Random.nextInt()" instead.(µÌşá8’ñ«ˆÀ1
+F
+java:S2140")Use "java.util.Random.nextInt()" instead.(•È™œ8’ñ«ˆÀ1
+F
+java:S2140")Use "java.util.Random.nextInt()" instead.(ÜÃ´Û8“ñ«ˆÀ1
+F
+java:S2140")Use "java.util.Random.nextInt()" instead.(¥Ğ°Á8“ñ«ˆÀ1
+L	java:S106"+Replace this use of System.out by a logger.(½ƒÆÇşÿÿÿÿ8“ñ«ˆÀ1
+G	java:S1069"+Replace this use of System.out by a logger.(„†òƒ8•ñ«ˆÀ1
+G	java:S106g"+Replace this use of System.out by a logger.(”…åÁ8˜ñ«ˆÀ1
+G	java:S106t"+Replace this use of System.out by a logger.(üÉ¥»8™ñ«ˆÀ1
+M	java:S106"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8›ñ«ˆÀ1
+H	java:S106’"+Replace this use of System.out by a logger.(¬Š÷8œñ«ˆÀ1
+Q
+java:S1481—".Remove this unused "resultado" local variable.(‹¤øğşÿÿÿÿ8ÇÖ±ˆÀ1
+H	java:S106¡"+Replace this use of System.out by a logger.(‰ÒÊİ8ñ«ˆÀ1
+H	java:S106¨"+Replace this use of System.out by a logger.(”…åÁ8ñ«ˆÀ1

@@ -1,8 +1,8 @@
-SkiAlpino;1;Madriddauh;Aliga;azul;5
-SkiAlpino;2;Galicia;Diosmio;verde;8
-SkiAlpino;3;Burgos;Quemecaigo;roja;7
-SkiAlpino;4;Valencia;Auxilio;azul;4
-SkiFondo;5;Alicante;Nosalgovivo;[Pueblo1, Pueblo2, Pueblo3];4
-SkiFondo;6;Granada;Gaviota;[Pueblo4, Pueblo5];4
-SkiFondo;7;Huelva;Perro;[Pueblo6, Pueblo7, Pueblo8];8
-SkiFondo;8;Sevilla;Gato;[Pueblo9, Pueblo10];7
+SkiAlpino;Aliga;Madrid;1;10;azul
+SkiAlpino;Diosmio;Galicia;2;2;verde
+SkiAlpino;Quemecaigo;Burgos;3;5;roja
+SkiAlpino;Auxilio;Valencia;4;1;azul
+SkiFondo;Nosalgovivo;Alicante;5;8;Pueblo1,Pueblo2,Pueblo3,
+SkiFondo;Gaviota;Granada;6;4;Pueblo4,Pueblo5,
+SkiFondo;Perro;Huelva;7;9;Pueblo6,Pueblo7,Pueblo8,
+SkiFondo;Gato;Sevilla;8;4;Pueblo9,Pueblo10,

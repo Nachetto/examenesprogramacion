@@ -9,6 +9,5 @@ import java.io.Serializable;
 public abstract class Pista implements Serializable {
     protected String nombre, provincia;
     protected int id, km;
-
     public abstract String toStringTextFile();
 }

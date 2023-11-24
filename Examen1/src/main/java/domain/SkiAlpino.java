@@ -31,8 +31,9 @@ public class SkiAlpino extends Pista implements Serializable {
                 "Dificultad: " + dificultad + "\n" +
                 "Km: " + km + "\n\n";
     }
+
     @Override
-    public String toStringTextFile(){
-        return "SkiAlpino;" + id + ";" + provincia + ";" + nombre + ";" + dificultad + ";" + km + "\n";
+    public String toStringTextFile() {
+        return "SkiAlpino;" + nombre + ";" + provincia + ";" + id + ";" + km + ";" + dificultad + "\n";
     }
 }

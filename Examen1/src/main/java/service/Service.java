@@ -34,10 +34,6 @@ public class Service{
         return dao.obtenerPistasOrdenadasPorProvinciaYKm();
     }
 
-    public boolean removePista(Pista p) {
-        return dao.removePista(p);
-    }
-
     public boolean eliminarPistaPorId(int idPista) {
         return dao.eliminarPistaPorId(idPista);
     }
@@ -46,15 +42,19 @@ public class Service{
         return dao.escribirFichero();
     }
 
-    public boolean cargarTxt(String nombreFichero) {
-        return dao.cargarTxt(nombreFichero);
-    }
-
     public boolean escribirBinario() {
         return dao.escribirBinario();
     }
 
     public boolean cargarBinario() {
         return dao.cargarBinario();
+    }
+
+    public void mapa() {
+        dao.mapa();
+    }
+
+    public boolean cargarFicheroTexto() {
+        return dao.cargarFicheroTexto();
     }
 }
