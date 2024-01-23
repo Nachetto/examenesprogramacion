@@ -26,9 +26,10 @@ public class SkiFondo extends Pista implements Serializable{
 
     @Override
     public String toStringTextFile() {
-        String pueblosString="";
+        StringBuilder pueblosString= new StringBuilder();
+        //pueblos.forEach(p->pueblosString.append(p).append(","));
         for (String pueblo:pueblos) {
-            pueblosString+=pueblo+",";
+            pueblosString.append(pueblo).append(",");
         }
         return "SkiFondo;"+nombre+";"+provincia+";"+id+";"+km+";"+pueblosString+"\n";
     }

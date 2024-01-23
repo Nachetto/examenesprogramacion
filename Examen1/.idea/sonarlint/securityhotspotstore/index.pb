@@ -24,3 +24,5 @@ $src/main/java/common/Constantes.java,b\8\b89aac6298498e582fd626f9c999a01d8fb63
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 ]
 -src/main/java/common/ExcepcionDificultad.java,8\9\899a6fcbb1c5d50418897303346b506947c74ad5
+Q
+!src/main/resources/FicheroTXT.txt,8\e\8ebe54e38dcb5de7fc473c651d0b6b4be7fd3711

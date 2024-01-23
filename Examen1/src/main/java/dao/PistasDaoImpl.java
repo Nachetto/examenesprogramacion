@@ -18,6 +18,7 @@ public class PistasDaoImpl implements PistasDao {
         List<String> nombresPueblo2 = Arrays.asList("Pueblo4", "Pueblo5");
         List<String> nombresPueblo3 = Arrays.asList("Pueblo6", "Pueblo7", "Pueblo8");
         List<String> nombresPueblo4 = Arrays.asList("Pueblo9", "Pueblo10");
+
         try {
             pistas.add(new SkiAlpino("Aliga", "Madrid", 1, (int) (Math.random() * 10) + 1, "azul"));
             pistas.add(new SkiAlpino("Diosmio", "Galicia", 2, (int) (Math.random() * 10) + 1, "verde"));
@@ -42,6 +43,11 @@ public class PistasDaoImpl implements PistasDao {
         return pistas.add(p);
     }
 
+    @Override
+    public boolean removePista(Pista p) {
+        return pistas.remove(p);
+    }
+
 
     @Override
     public int kmExtensionPorProvincia(String provincia) {
@@ -53,6 +59,7 @@ public class PistasDaoImpl implements PistasDao {
 
     @Override
     public boolean nuevoPuebloParaPista(String nombreDeLaPista, String nuevoPueblo) {
+        //busco em todas las pistas y si es de ski de fondo añado el pueblo
         for (Pista pista : pistas) {
             if (pista.getNombre().equalsIgnoreCase(nombreDeLaPista)) {
                 try {
@@ -83,11 +90,6 @@ public class PistasDaoImpl implements PistasDao {
             }
         });
         return copiaPistas;
-    }
-
-    @Override
-    public boolean removePista(Pista p) {
-        return pistas.remove(p);
     }
 
     @Override
@@ -125,21 +127,6 @@ public class PistasDaoImpl implements PistasDao {
             return true;
         } catch (IOException e) {
             System.out.println(Constantes.ERRORBINARIO + " porque:" + e.getMessage());
-            return false;
-        }
-    }
-
-
-    @Override
-    public boolean cargarBinario() {
-        try (FileInputStream archivoEntrada = new
-                FileInputStream("src//main//resources//FicheroBIN");
-             ObjectInputStream lectorObjeto = new
-                     ObjectInputStream(archivoEntrada)) {
-            pistas = (ArrayList<Pista>) lectorObjeto.readObject();
-            return true;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
             return false;
         }
     }
@@ -189,5 +176,20 @@ public class PistasDaoImpl implements PistasDao {
             resultado=false;
         }
         return resultado;
+    }
+
+
+    @Override
+    public boolean cargarBinario() {
+        try (FileInputStream archivoEntrada = new
+                FileInputStream("src//main//resources//FicheroBIN");
+             ObjectInputStream lectorObjeto = new
+                     ObjectInputStream(archivoEntrada)) {
+            pistas = (ArrayList<Pista>) lectorObjeto.readObject();
+            return true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
 }
